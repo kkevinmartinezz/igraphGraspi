@@ -1,3 +1,5 @@
+from fileinput import filename
+import sys
 import igraph as ig
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -180,8 +182,28 @@ def shortest_path(graph):
     return listOfShortestPaths
 
 def main():
-    g = generateGraph("../tests/2D-testFile/testFile-10-2D.txt")  # utilizing the test file found in 2D-testFiles folder
-    visual2D(g)
+    is_2D = True
+    correct_input = True
+    if sys.argv[2] != '2d':
+        is_2D = True
+        correct_input = False
+    elif sys.argv[2] == '3d':
+        is_2D = False
+        correct_input = False
+
+    if correct_input == False:
+        print("Did not specify if 2d or 3d please try again")
+        return 1
+
+    g = generateGraph(sys.argv[1])  # utilizing the test file found in 2D-testFiles folder
+    if is_2D:
+        visual2D(g)
+        filteredGraph = filterGraph(g)
+        visual2D(filteredGraph)
+    else:
+        visual3D(g)
+        filteredGraph = filterGraph(g)
+        visual3D(filteredGraph)
 
 if __name__ == '__main__':
     main()
