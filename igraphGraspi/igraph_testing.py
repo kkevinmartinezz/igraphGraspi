@@ -180,7 +180,7 @@ def shortest_path(graph):
     return listOfShortestPaths
 
 def main():
-    g = generateGraph("2D-testFile/testFile-10-2D.txt")  # utilizing the test file found in 2D-testFiles folder
+    g = generateGraph("tests/2D-testFile/testFile-10-2D.txt")  # utilizing the test file found in 2D-testFiles folder
     visual2D(g)
 
 if __name__ == '__main__':
