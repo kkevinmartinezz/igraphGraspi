@@ -81,5 +81,21 @@ visual3D(g)
 ```
 Both take in a graph object
 
+## Testing from Command Line
 
+In this Github Repo, all the tests are in the test directory. Furthermore, within this directory are two more directories: 2D-testFile and 3D-testFile.
+Inside these directories, some files hold information about either 2d or 3d graphs based on the directory name. 
+When running from command lines you will need to know the complete pathname of the test file you are trying to run.
 
+The command line input to run a graph creation will have the following format
+```
+python igraphGraspi/igraph_testing.py {total pathname of test file} {2d or 3d}
+```
+If you have the same test directories as this GitHub Repo you should be able to run the following command line argument to output a 2D 10x10 graph.
+```
+igraphGraspi/igraph_testing.py tests/2D-testFile/testFile-10-2D.txt 2d
+```
+**Output of Command Line Input**
+If the pathname is correct and it is properly stated whether it is a 2d or 3d graph creation, a pop-up window should appear with the visualization of the initial graph creation will appear. 
+if you exit out of this pop-up window, then another will appear with the visualization of the filtered version of the same graph. 
+If this doesn't occur then you either did not follow the pathname of the test-file correctly or did not state that the graph is either 2d or 3d. 
