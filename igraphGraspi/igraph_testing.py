@@ -287,7 +287,7 @@ def main():
         visual2D(g)
         filteredGraph = filterGraph(g)
         visual2D(filteredGraph)
-        print(shortest_path(filteredGraph, g.vs,'blue', "test.txt"))
+        shortest_path(filteredGraph, g.vs,'blue', "test.txt")
 
         with open('Current_Test.csv', 'w', newline='') as file:
             field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
@@ -307,6 +307,7 @@ def main():
         visual3D(g)
         filteredGraph = filterGraph(g)
         visual3D(filteredGraph)
+        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
         with open('Current_Test.csv', 'w', newline='') as file:
             field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
                      " Memory Usage"]
