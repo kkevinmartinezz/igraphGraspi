@@ -51,5 +51,16 @@ If the pathname is correct and it is properly stated whether it is a 2d or 3d gr
 if you exit out of this pop-up window, then another will appear with the visualization of the filtered version of the same graph. 
 If this doesn't occur then you either did not follow the pathname of the test-file correctly or did not state that the graph is either 2d or 3d. 
  
+# Outputting Runtime and Memory data into CSV file
+```
+if __name__ == '__main__':
+    # main()
+csv_testing()
+```
+1. In the function above, comment out the main() and uncomment csv_testing()
+2. Now since we want to get the total runtimes and memory usage of 5 testcases you will need to add all 5 2-D testcases in the tests/2D-testFile directory as the inputs in this order: 10x10, 50x50, 100x100, 500x500, 1000x1000.
+3. Example command is as followed: igraphGraspi/igraph_testing.py tests/2D-testFile/testFile-10-2D.txt tests/2D-testFile/testFile-50-2D.txt tests/2D-testFile/testFile-100-2D.txt tests/2D-testFile/testFile-500-2D.txt tests/2D-testFile/testFile-1000-2D.txt
+4. This will run tests for all of these testfiles and document the total memory and runtime usage of all of them in a file named Current_Test.csv.
+5. This will take a while to run but when it is done make sure data has been documented in the Current_Test.csv file
 
 
