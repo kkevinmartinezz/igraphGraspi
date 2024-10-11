@@ -72,8 +72,9 @@ def edge(fileName):
                     edge.append([xi,xi+1]) # horizontal except first column
                     if x == secondToLastRow - num:
                         edge.append([secondToLastRow+i+offset,secondToLastRow+offset+i+1]) # horizontal last row except first column
-
+    # file.close()
     edge.append([(secondToLastRow+offset),(secondToLastRow+1+offset)]) # horizontal last row first column
+
     return edge
 
 '''------- Labeling the color of the vertices -------'''
@@ -178,17 +179,29 @@ def filterGraph(graph):
     return filteredGraph
 
 '''********* Shortest Path **********'''
-def shortest_path(graph):
+
+
+def shortest_path(graph, vertices, toVertex, fileName):
     numVertices = graph.vcount()
     ccp = graph.connected_components()
     listOfShortestPaths = {}
-    blueVertex = numVertices-2
+    vertex = numVertices
 
-    for c in ccp:
-        if graph.vs[c]['color'] == 'black':
-            for x in c:
-                if graph.vs[x]['color'] == 'black' or graph.vs[x]['color'] == 'blue':
-                    listOfShortestPaths[x] = graph.get_shortest_paths(blueVertex,x,output="vpath")[0]
+    if toVertex == 'blue':
+        vertex = numVertices - 2
+    elif toVertex == 'red':
+        vertex = numVertices - 1
+
+    # f = open(fileName, "x")
+
+    with open(fileName, 'w') as f:
+        for c in ccp:
+            if graph.vs[c][0]['color'] == vertices or graph.vs[c][0]['color'] == toVertex:
+                for x in c:
+                    if graph.vs[x]['color'] == vertices or graph.vs[x]['color'] == toVertex:
+                        listOfShortestPaths[x] = graph.get_shortest_paths(x, vertex, output="vpath")[0]
+                        f.write(str(x) + ": " + str(
+                            len(graph.get_shortest_paths(x, vertex, output="vpath")[0]) - 1) + '\n')
 
     return listOfShortestPaths
 
@@ -211,33 +224,33 @@ def run_all_three_functions(filename, graph):
     GC_total_time, FG_total_time, SP_total_time = 0,0,0
 
     start = time.time()
-    generateGraph(filename)
+    g = generateGraph(filename)
     GC_total_time += time.time() - start
 
     start = time.time()
-    filterGraph(graph)
+    filteredGraph = filterGraph(graph)
     FG_total_time += time.time() - start
 
     start = time.time()
-    shortest_path(graph)
+    shortest_path(filteredGraph, g.vs,'blue', "test.txt")
     SP_total_time += time.time() - start
 
     GC_mem, FG_mem, SP_mem = 0, 0, 0
 
     tracemalloc.start()
-    generateGraph(filename)
+    g = generateGraph(filename)
     stats = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     GC_mem = stats[1] - stats[0]
 
     tracemalloc.start()
-    filterGraph(graph)
+    filteredGraph = filterGraph(graph)
     stats = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     FG_mem = stats[1] - stats[0]
 
     tracemalloc.start()
-    shortest_path(graph)
+    shortest_path(filteredGraph, g.vs,'blue', "test.txt")
     stats = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     SP_mem = stats[1] - stats[0]
@@ -245,6 +258,15 @@ def run_all_three_functions(filename, graph):
     total_mem = GC_mem + FG_mem + SP_mem
 
     return GC_total_time, FG_total_time, SP_total_time, total_mem
+
+def read_file_size_n(filename):
+    with open(filename, 'r') as file:
+        line = file.readline()
+        splitLine = line.split()
+        n = splitLine[1]
+        file.close()
+        return int(n)
+
 
 def main():
     is_2D = True
@@ -265,18 +287,17 @@ def main():
         visual2D(g)
         filteredGraph = filterGraph(g)
         visual2D(filteredGraph)
-        print(shortest_path(g))
-        with open('Python-Igraph_2D_Test_Results.csv', 'w', newline='') as file:
-            field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total", " Memory Usage"]
+        print(shortest_path(filteredGraph, g.vs,'blue', "test.txt"))
+
+        with open('Current_Test.csv', 'w', newline='') as file:
+            field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
+                     " Memory Usage"]
             writer = csv.writer(file)
             f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
             writer.writerow([f])
-            x = 0
-            n = 0
-            n_2 = 0
+            n = read_file_size_n(sys.argv[1])
             dimensions = 2
             data = run_all_three_functions(sys.argv[1], g)
-            n = 10
             n_2 = n * n
             total_time = data[0] + data[1] + data[3]
             row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
@@ -286,6 +307,19 @@ def main():
         visual3D(g)
         filteredGraph = filterGraph(g)
         visual3D(filteredGraph)
+        with open('Current_Test.csv', 'w', newline='') as file:
+            field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
+                     " Memory Usage"]
+            writer = csv.writer(file)
+            f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
+            writer.writerow([f])
+            n = read_file_size_n(sys.argv[1])
+            dimensions = 3
+            data = run_all_three_functions(sys.argv[1], g)
+            n_2 = n * n
+            total_time = data[0] + data[1] + data[3]
+            row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
+            writer.writerow([row])
 
 
 if __name__ == '__main__':
