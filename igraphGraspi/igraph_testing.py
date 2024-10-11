@@ -8,9 +8,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import csvFileMaker
-# import igraphGraspi.csvFileMaker
-# from build.lib.igraphGraspi.csvFileMaker import functionMemory
-# from igraphGraspi.csvFileMaker import csvMaker
+
 
 '''---------Function to create edges for graph in specified format --------'''
 def edge(fileName):
@@ -72,8 +70,8 @@ def edge(fileName):
                     edge.append([xi,xi+1]) # horizontal except first column
                     if x == secondToLastRow - num:
                         edge.append([secondToLastRow+i+offset,secondToLastRow+offset+i+1]) # horizontal last row except first column
-    # file.close()
     edge.append([(secondToLastRow+offset),(secondToLastRow+1+offset)]) # horizontal last row first column
+    file.close()
 
     return edge
 
@@ -322,6 +320,79 @@ def main():
             row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
             writer.writerow([row])
 
+def csv_testing():
+
+    with open('Current_Test.csv', 'w', newline='') as file:
+        filename = sys.argv[1]
+        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        filteredGraph = filterGraph(g)
+        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
+                 " Memory Usage"]
+        writer = csv.writer(file)
+        f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
+        writer.writerow([f])
+        n = read_file_size_n(filename)
+        dimensions = 2
+        data = run_all_three_functions(filename, g)
+        n_2 = n * n
+        total_time = data[0] + data[1] + data[3]
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,} {data[1]:<24,e} {data[2]:<24,e} {total_time:<24,e} {data[3]:<24}"
+        writer.writerow([row])
+
+        filename = sys.argv[2]
+        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        filteredGraph = filterGraph(g)
+        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        writer = csv.writer(file)
+        n = read_file_size_n(filename)
+        dimensions = 2
+        data = run_all_three_functions(filename, g)
+        n_2 = n * n
+        total_time = data[0] + data[1] + data[3]
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        writer.writerow([row])
+
+        filename = sys.argv[3]
+        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        filteredGraph = filterGraph(g)
+        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        writer = csv.writer(file)
+        n = read_file_size_n(filename)
+        dimensions = 2
+        data = run_all_three_functions(filename, g)
+        n_2 = n * n
+        total_time = data[0] + data[1] + data[3]
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        writer.writerow([row])
+
+        filename = sys.argv[4]
+        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        filteredGraph = filterGraph(g)
+        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        writer = csv.writer(file)
+        n = read_file_size_n(filename)
+        dimensions = 2
+        data = run_all_three_functions(filename, g)
+        n_2 = n * n
+        total_time = data[0] + data[1] + data[3]
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        writer.writerow([row])
+
+        filename = sys.argv[5]
+        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        filteredGraph = filterGraph(g)
+        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        writer = csv.writer(file)
+        n = read_file_size_n(filename)
+        dimensions = 2
+        data = run_all_three_functions(filename, g)
+        n_2 = n * n
+        total_time = data[0] + data[1] + data[3]
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        writer.writerow([row])
+
 
 if __name__ == '__main__':
     main()
+    # csv_testing()
