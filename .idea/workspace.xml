@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185c66ce-960c-4e62-a5fe-7fbccd6f9a16" name="Changes" comment="Task #89 - Move the implementation of igraph into a github repository and be able to pip install this repo onto any device so any user can run igraph tests from their own devices with ease - copying igraph gitHub to create my own repository in order to be able to modify it and create a pip install for this repo" />
+    <list default="true" id="185c66ce-960c-4e62-a5fe-7fbccd6f9a16" name="Changes" comment="Task #89 - Move the implementation of igraph into a github repository and be able to pip install this repo onto any device so any user can run igraph tests from their own devices with ease - copying igraph gitHub to create my own repository in order to be able to modify it and create a pip install for this repo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Python-Igraph_2D_Test_Results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Python-Igraph_2D_Test_Results.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/igraphGraspi/igraph_testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/igraphGraspi/igraph_testing.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,21 +17,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "kkevinmartinezz"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kkevinmartinezz&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kkevinmartinezz/igraphGraspi.git",
-    "accountId": "dcdb2a06-4880-4b9b-8197-5a4603c5cfb5"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kkevinmartinezz/igraphGraspi.git&quot;,
+    &quot;accountId&quot;: &quot;dcdb2a06-4880-4b9b-8197-5a4603c5cfb5&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2n8k3LUfLhDa0q0teSLzwS9BXFN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,7 +43,7 @@
     "Python.igraph_testing.executor": "Run",
     "Python.testFileMaker.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "sprint2",
     "last_opened_file_path": "C:/Users/kevin/PycharmProjects/igraphGraspi/.venv",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -106,6 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728361889993</updated>
       <workItem from="1728361892141" duration="1128000" />
+      <workItem from="1728497034238" duration="14972000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -143,7 +148,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Task #89 - Move the implementation of igraph into a github repository and be able to pip install this repo onto any device so any user can run igraph tests from their own devices with ease - copying igraph gitHub to create my own repository in order to be able to modify it and create a pip install for this repo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/igraphGraspi$igraph_testing.coverage" NAME="igraph_testing Coverage Results" MODIFIED="1728362880519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/igraphGraspi" />
+    <SUITE FILE_PATH="coverage/igraphGraspi$igraph_testing.coverage" NAME="igraph_testing Coverage Results" MODIFIED="1728619981474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/igraphGraspi" />
     <SUITE FILE_PATH="coverage/igraphGraspi$testFileMaker.coverage" NAME="testFileMaker Coverage Results" MODIFIED="1728362264060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/igraphGraspi" />
   </component>
 </project>
