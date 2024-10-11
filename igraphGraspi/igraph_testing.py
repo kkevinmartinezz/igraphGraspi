@@ -394,5 +394,5 @@ def csv_testing():
 
 
 if __name__ == '__main__':
-    # main()
-    csv_testing()
+    main()
+    # csv_testing()
