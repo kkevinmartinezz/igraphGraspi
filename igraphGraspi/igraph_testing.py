@@ -218,7 +218,7 @@ def add_red_node(g, file):
         endOfVertexCount -= 1
         numTopRowVertices -= 1
 
-def run_all_three_functions(filename, graph):
+def run_all_three_functions(filename):
     GC_total_time, FG_total_time, SP_total_time = 0,0,0
 
     start = time.time()
@@ -226,7 +226,7 @@ def run_all_three_functions(filename, graph):
     GC_total_time += time.time() - start
 
     start = time.time()
-    filteredGraph = filterGraph(graph)
+    filteredGraph = filterGraph(g)
     FG_total_time += time.time() - start
 
     start = time.time()
@@ -242,7 +242,7 @@ def run_all_three_functions(filename, graph):
     GC_mem = stats[1] - stats[0]
 
     tracemalloc.start()
-    filteredGraph = filterGraph(graph)
+    filteredGraph = filterGraph(g)
     stats = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     FG_mem = stats[1] - stats[0]
@@ -324,9 +324,9 @@ def csv_testing():
 
     with open('Current_Test.csv', 'w', newline='') as file:
         filename = sys.argv[1]
-        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
-        filteredGraph = filterGraph(g)
-        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        # g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        # filteredGraph = filterGraph(g)
+        # shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
         field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
                  " Memory Usage"]
         writer = csv.writer(file)
@@ -334,65 +334,65 @@ def csv_testing():
         writer.writerow([f])
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename, g)
+        data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,} {data[1]:<24,e} {data[2]:<24,e} {total_time:<24,e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,e} {total_time:<24,e} {data[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[2]
-        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
-        filteredGraph = filterGraph(g)
-        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        # g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        # filteredGraph = filterGraph(g)
+        # shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
         writer = csv.writer(file)
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename, g)
+        data = run_all_three_functions(filename )
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,e} {total_time:<24,e} {data[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[3]
-        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
-        filteredGraph = filterGraph(g)
-        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        # g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        # filteredGraph = filterGraph(g)
+        # shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
         writer = csv.writer(file)
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename, g)
+        data = run_all_three_functions(filename )
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,e} {total_time:<24,e} {data[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[4]
-        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
-        filteredGraph = filterGraph(g)
-        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        # g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        # filteredGraph = filterGraph(g)
+        # shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
         writer = csv.writer(file)
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename, g)
+        data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,e} {total_time:<24,e} {data[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[5]
-        g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
-        filteredGraph = filterGraph(g)
-        shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
+        # g = generateGraph(filename)  # utilizing the test file found in 2D-testFiles folder
+        # filteredGraph = filterGraph(g)
+        # shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
         writer = csv.writer(file)
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename, g)
+        data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,} {total_time:<24,e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<24,e} {data[1]:<24,e} {data[2]:<24,e} {total_time:<24,e} {data[3]:<24}"
         writer.writerow([row])
 
 
 if __name__ == '__main__':
-    main()
-    # csv_testing()
+    # main()
+    csv_testing()
