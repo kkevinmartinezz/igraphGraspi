@@ -40,11 +40,12 @@ When running from command lines you will need to know the complete pathname of t
 
 The command line input to run a graph creation will have the following format
 ```
-python igraphGraspi/igraph_testing.py {total pathname of test file} {2d or 3d}
+python igraphGraspi/igraphGraspi/igraph_testing.py {total pathname of test file} {2d or 3d}
 ```
 If you have the same test directories as this GitHub Repo you should be able to run the following command line argument to output a 2D 10x10 graph.
 ```
-igraphGraspi/igraph_testing.py tests/2D-testFile/testFile-10-2D.txt 2d
+python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/2D-testFile/testFile-10-2D.txt 2d
+
 ```
 **Output of Command Line Input**
 If the pathname is correct and it is properly stated whether it is a 2d or 3d graph creation, a pop-up window should appear with the visualization of the initial graph creation will appear. 
