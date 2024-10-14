@@ -1,11 +1,9 @@
 import csv
 import time
 import tracemalloc
-from fileinput import filename
 import sys
 import igraph as ig
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import csvFileMaker
 
@@ -287,38 +285,38 @@ def main():
         visual2D(filteredGraph)
         shortest_path(filteredGraph, g.vs,'blue', "test.txt")
 
-        with open('Current_Test.csv', 'w', newline='') as file:
-            field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
-                     " Memory Usage"]
-            writer = csv.writer(file)
-            f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
-            writer.writerow([f])
-            n = read_file_size_n(sys.argv[1])
-            dimensions = 2
-            data = run_all_three_functions(sys.argv[1], g)
-            n_2 = n * n
-            total_time = data[0] + data[1] + data[3]
-            row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
-            writer.writerow([row])
+        # with open('Current_File.csv', 'w', newline='') as file:
+        #     field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
+        #              " Memory Usage"]
+        #     writer = csv.writer(file)
+        #     f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
+        #     writer.writerow([f])
+        #     n = read_file_size_n(sys.argv[1])
+        #     dimensions = 2
+        #     data = run_all_three_functions(sys.argv[1], g)
+        #     n_2 = n * n
+        #     total_time = data[0] + data[1] + data[3]
+        #     row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
+        #     writer.writerow([row])
 
     else:
         visual3D(g)
         filteredGraph = filterGraph(g)
         visual3D(filteredGraph)
         shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
-        with open('Current_Test.csv', 'w', newline='') as file:
-            field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
-                     " Memory Usage"]
-            writer = csv.writer(file)
-            f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
-            writer.writerow([f])
-            n = read_file_size_n(sys.argv[1])
-            dimensions = 3
-            data = run_all_three_functions(sys.argv[1], g)
-            n_2 = n * n
-            total_time = data[0] + data[1] + data[3]
-            row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
-            writer.writerow([row])
+        # with open('Current_Test.csv', 'w', newline='') as file:
+        #     field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
+        #              " Memory Usage"]
+        #     writer = csv.writer(file)
+        #     f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
+        #     writer.writerow([f])
+        #     n = read_file_size_n(sys.argv[1])
+        #     dimensions = 3
+        #     data = run_all_three_functions(sys.argv[1], g)
+        #     n_2 = n * n
+        #     total_time = data[0] + data[1] + data[3]
+        #     row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
+        #     writer.writerow([row])
 
 def csv_testing():
 

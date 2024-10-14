@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="185c66ce-960c-4e62-a5fe-7fbccd6f9a16" name="Changes" comment="Task #89 - Move the implementation of igraph into a github repository and be able to pip install this repo onto any device so any user can run igraph tests from their own devices with ease - copying igraph gitHub to create my own repository in order to be able to modify it and create a pip install for this repo">
+    <list default="true" id="185c66ce-960c-4e62-a5fe-7fbccd6f9a16" name="Changes" comment="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added to README how to output Runtime and Memory data into a CSV file with given repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Python-Igraph_2D_Test_Results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Python-Igraph_2D_Test_Results.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/igraphGraspi/igraph_testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/igraphGraspi/igraph_testing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,21 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.igraph_testing.executor": "Run",
-    "Python.testFileMaker.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "sprint2",
-    "last_opened_file_path": "C:/Users/kevin/PycharmProjects/igraphGraspi/.venv",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.csvTestingForAll.executor&quot;: &quot;Run&quot;,
+    &quot;Python.igraph_testing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.testFileMaker.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;sprint2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kevin/PycharmProjects/igraphGraspi/.venv&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kevin\PycharmProjects\igraphGraspi\.venv" />
@@ -63,7 +63,30 @@
       <recent name="C:\Users\kevin\PycharmProjects\igraphGraspi\tests" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.csvTestingForAll">
+    <configuration name="csvTestingForAll" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="igraphGraspi" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/igraphGraspi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/igraphGraspi/csvTestingForAll.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="igraph_testing" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="igraphGraspi" />
       <option name="ENV_FILES" value="" />
@@ -89,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.csvTestingForAll" />
         <item itemvalue="Python.igraph_testing" />
       </list>
     </recent_temporary>
@@ -111,6 +135,8 @@
       <updated>1728361889993</updated>
       <workItem from="1728361892141" duration="1128000" />
       <workItem from="1728497034238" duration="14972000" />
+      <workItem from="1728628161617" duration="15375000" />
+      <workItem from="1728880920179" duration="224000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -136,19 +162,109 @@
       <option name="project" value="LOCAL" />
       <updated>1728362976251</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added a add_red_node function which will add the red node that will connect the bottom row of the graph. Also edited the filterGraph function to filter out this new red node correctly">
+      <option name="closed" value="true" />
+      <created>1728628559016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728628559016</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added README instructions to how to git clone project correctly.">
+      <option name="closed" value="true" />
+      <created>1728629427051</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728629427051</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Fixed up shortest_path a bit, however, not sure if working correctly yet, but executes normally">
+      <option name="closed" value="true" />
+      <created>1728664633358</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728664633358</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Forgot to include line 310">
+      <option name="closed" value="true" />
+      <created>1728665416553</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728665416553</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added a csv_testing() function that can be used in place of main() in order to output runtime and memory usage from the 5 2d tests">
+      <option name="closed" value="true" />
+      <created>1728674880820</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728674880820</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added a csv_testing() function that can be used in place of main() in order to output runtime and memory usage from the 5 2d tests">
+      <option name="closed" value="true" />
+      <created>1728677350146</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728677350146</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added a csv_testing() function that can be used in place of main() in order to output runtime and memory usage from the 5 2d tests">
+      <option name="closed" value="true" />
+      <created>1728677365196</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728677365196</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added a csv_testing() function that can be used in place of main() in order to output runtime and memory usage from the 5 2d tests">
+      <option name="closed" value="true" />
+      <created>1728677942988</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728677942988</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added to README how to output Runtime and Memory data into a CSV file with given repo">
+      <option name="closed" value="true" />
+      <created>1728680484304</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728680484304</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="Task #89 - Move the implementation of igraph into a github repository and be able to pip install this repo onto any device so any user can run igraph tests from their own devices with ease - copying igraph gitHub to create my own repository in order to be able to modify it and create a pip install for this repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #89 - Move the implementation of igraph into a github repository and be able to pip install this repo onto any device so any user can run igraph tests from their own devices with ease - copying igraph gitHub to create my own repository in order to be able to modify it and create a pip install for this repo" />
+    <MESSAGE value="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added a add_red_node function which will add the red node that will connect the bottom row of the graph. Also edited the filterGraph function to filter out this new red node correctly" />
+    <MESSAGE value="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added README instructions to how to git clone project correctly." />
+    <MESSAGE value="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Fixed up shortest_path a bit, however, not sure if working correctly yet, but executes normally" />
+    <MESSAGE value="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Forgot to include line 310" />
+    <MESSAGE value="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added a csv_testing() function that can be used in place of main() in order to output runtime and memory usage from the 5 2d tests" />
+    <MESSAGE value="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added to README how to output Runtime and Memory data into a CSV file with given repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #89 - Move the implementation of igraph into a github repository and be able to run from command line with user inputs so any user can run igraph tests from their own devices with ease - Added to README how to output Runtime and Memory data into a CSV file with given repo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/igraphGraspi$igraph_testing.coverage" NAME="igraph_testing Coverage Results" MODIFIED="1728619981474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/igraphGraspi" />
+    <SUITE FILE_PATH="coverage/igraphGraspi$csvTestingForAll.coverage" NAME="csvTestingForAll Coverage Results" MODIFIED="1728673872971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/igraphGraspi" />
+    <SUITE FILE_PATH="coverage/igraphGraspi$igraph_testing.coverage" NAME="igraph_testing Coverage Results" MODIFIED="1728628467068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/igraphGraspi" />
     <SUITE FILE_PATH="coverage/igraphGraspi$testFileMaker.coverage" NAME="testFileMaker Coverage Results" MODIFIED="1728362264060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/igraphGraspi" />
   </component>
 </project>
