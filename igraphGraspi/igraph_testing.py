@@ -285,64 +285,45 @@ def main():
         visual2D(filteredGraph)
         shortest_path(filteredGraph, g.vs,'blue', "test.txt")
 
-        # with open('Current_File.csv', 'w', newline='') as file:
-        #     field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
-        #              " Memory Usage"]
-        #     writer = csv.writer(file)
-        #     f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
-        #     writer.writerow([f])
-        #     n = read_file_size_n(sys.argv[1])
-        #     dimensions = 2
-        #     data = run_all_three_functions(sys.argv[1], g)
-        #     n_2 = n * n
-        #     total_time = data[0] + data[1] + data[3]
-        #     row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
-        #     writer.writerow([row])
-
     else:
         visual3D(g)
         filteredGraph = filterGraph(g)
         visual3D(filteredGraph)
         shortest_path(filteredGraph, g.vs, 'blue', "test.txt")
-        # with open('Current_Test.csv', 'w', newline='') as file:
-        #     field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
-        #              " Memory Usage"]
-        #     writer = csv.writer(file)
-        #     f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
-        #     writer.writerow([f])
-        #     n = read_file_size_n(sys.argv[1])
-        #     dimensions = 3
-        #     data = run_all_three_functions(sys.argv[1], g)
-        #     n_2 = n * n
-        #     total_time = data[0] + data[1] + data[3]
-        #     row = f"{n:<5} {n_2:<8} {data[0]:<24} {data[1]:<24} {data[2]:<24} {total_time:<24} {data[3]:<24}"
-        #     writer.writerow([row])
 
 def csv_testing():
 
-    with open('Current_Test.csv', 'w', newline='') as file:
+    with open('igraphGraspi/Current_Test.csv', 'w', newline='') as file:
         filename = sys.argv[1]
         field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
                  " Memory Usage"]
         writer = csv.writer(file)
-        f = "{:<5} {:<8} {:<24} {:<24} {:<24} {:<24} {:<24}".format(*field)
+        f = "{:<5} {:<8} {:<55} {:<56} {:<56} {:<56} {:<30}".format(*field)
         writer.writerow([f])
         n = read_file_size_n(filename)
         dimensions = 2
         data = run_all_three_functions(filename)
+        data2 = run_all_three_functions(filename)
+        data3= run_all_three_functions(filename)
+        data4 = run_all_three_functions(filename)
+        data5 = run_all_three_functions(filename)
+        dataAVG = [(data[0] + data2[0] + data3[0] + data4[0] + data5[0]) / 5,
+                   (data[1] + data2[1] + data3[1] + data4[1] + data5[1]) / 5,
+                   (data[2] + data2[2] + data3[2] + data4[2] + data5[2]) / 5,
+                   (data[3] + data2[3] + data3[3] + data4[3] + data5[3]) / 5]
         n_2 = n * n
-        total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,.50e} {data[1]:<24,.50e} {data[2]:<24,.50e} {total_time:<24,.50e} {data[3]:<24}"
+        total_timeAVG = dataAVG[0] + dataAVG[1] + dataAVG[3]
+        row = f"{n:<5} {n_2:<8} {dataAVG[0]:<50,.50e} {dataAVG[1]:<50,.50e} {dataAVG[2]:<50,.50e} {total_timeAVG:<50,.50e} {dataAVG[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[2]
         writer = csv.writer(file)
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename )
+        data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,.50e} {data[1]:<24,.50e} {data[2]:<24,.50e} {total_time:<24,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[3]
@@ -352,7 +333,7 @@ def csv_testing():
         data = run_all_three_functions(filename )
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,.50e} {data[1]:<24,.50e} {data[2]:<24,.50e} {total_time:<24,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[4]
@@ -362,7 +343,7 @@ def csv_testing():
         data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,.50e} {data[1]:<24,.50e} {data[2]:<24,.50e} {total_time:<24,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[5]
@@ -372,10 +353,10 @@ def csv_testing():
         data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[3]
-        row = f"{n:<5} {n_2:<8} {data[0]:<24,.100e} {data[1]:<24,.100e} {data[2]:<24,.50e} {total_time:<24,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
         writer.writerow([row])
 
 
 if __name__ == '__main__':
-    # main()
-    csv_testing()
+    main()
+    # csv_testing()
