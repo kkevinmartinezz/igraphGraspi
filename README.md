@@ -29,12 +29,20 @@ In order to do this you will need to do the following (based on using Pycharm):
 5. copy the line of code.
 6. Then open a new project in your IDE of choice (PyCharm was used for creating this REPO)
 7. open a terminal.
-8. enter the following command: git clone <paste line of code copied in step 5>.
+8. enter the following command: 
+```
+git clone <paste line of code copied in step 5>.
+```
+\*If you wish to clone a branch do the following command instead:
+```
+git clone -b <Branch Name> --single-branch <paste line of code copied in step 5>.
+
+```
 9. This should import the entire repo. If not then you may need to activate GitHub addons into your IDE of choice.
 ## Testing from Command Line
 Now that we have cloned the REPO lets talk about testing.
 
-In this Github Repo, all the tests are in the test directory. Furthermore, within this directory are two more directories: 2D-testFile and 3D-testFile.
+In this GitHub Repo, all the tests are in the test directory. Furthermore, within this directory are two more directories: 2D-testFile and 3D-testFile.
 Inside these directories, some files hold information about either 2d or 3d graphs based on the directory name. 
 When running from command lines you will need to know the complete pathname of the test file you are trying to run.
 
@@ -47,7 +55,8 @@ If you have the same test directories as this GitHub Repo you should be able to 
 python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/2D-testFile/testFile-10-2D.txt 2d
 
 ```
-**Output of Command Line Input**
+## Output of Command Line Input
+
 If the pathname is correct and it is properly stated whether it is a 2d or 3d graph creation, a pop-up window should appear with the visualization of the initial graph creation will appear. 
 if you exit out of this pop-up window, then another will appear with the visualization of the filtered version of the same graph. 
 If this doesn't occur then you either did not follow the pathname of the test-file correctly or did not state that the graph is either 2d or 3d. 
@@ -58,10 +67,14 @@ if __name__ == '__main__':
     # main()
 csv_testing()
 ```
-1. In the function above, comment out the main() and uncomment csv_testing()
+1. In the "__name__ == '__main__':", comment out the main() function and uncomment csv_testing() as shown above.
 2. Now since we want to get the total runtimes and memory usage of 5 testcases you will need to add all 5 2-D testcases in the tests/2D-testFile directory as the inputs in this order: 10x10, 50x50, 100x100, 500x500, 1000x1000.
-3. Example command is as followed: igraphGraspi/igraph_testing.py tests/2D-testFile/testFile-10-2D.txt tests/2D-testFile/testFile-50-2D.txt tests/2D-testFile/testFile-100-2D.txt tests/2D-testFile/testFile-500-2D.txt tests/2D-testFile/testFile-1000-2D.txt
+3. Example command is as followed: 
+```
+python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/2D-testFile/testFile-10-2D.txt igraphGraspi/tests/2D-testFile/testFile-50-2D.txt igraphGraspi/tests/2D-testFile/testFile-100-2D.txt igraphGraspi/tests/2D-testFile/testFile-500-2D.txt igraphGraspi/tests/2D-testFile/testFile-1000-2D.txt
+```
 4. This will run tests for all of these testfiles and document the total memory and runtime usage of all of them in a file named Current_Test.csv.
 5. This will take a while to run but when it is done make sure data has been documented in the Current_Test.csv file
+
 
 
