@@ -68,14 +68,20 @@ if __name__ == '__main__':
     # main()
 csv_testing()
 ```
-1. In the "__name__ == '__main__':", comment out the main() function and uncomment csv_testing() as shown above.
+1. In the igraph_testing.py file's "__name__ == '__main__':" (shown above), comment out the main() function and uncomment csv_testing() so it now looks like the code above.
 2. Now since we want to get the total runtimes and memory usage of 5 testcases you will need to add all 5 2-D testcases in the tests/2D-testFile directory as the inputs in this order: 10x10, 50x50, 100x100, 500x500, 1000x1000.
 3. Example command is as followed: 
 ```
 python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/2D-testFile/testFile-10-2D.txt igraphGraspi/tests/2D-testFile/testFile-50-2D.txt igraphGraspi/tests/2D-testFile/testFile-100-2D.txt igraphGraspi/tests/2D-testFile/testFile-500-2D.txt igraphGraspi/tests/2D-testFile/testFile-1000-2D.txt
 ```
 4. This will run tests for all of these testfiles and document the total memory and runtime usage of all of them in a file named Current_Test.csv.
-5. This will take a while to run but when it is done make sure data has been documented in the Current_Test.csv file
+5. This will take a while to run but when it is done make sure data has been documented in the Current_Test.csv file.
+6. Don't forget to change code back when done, this is just for testing runtime and memory usage, to use the code as intended for one test file it should be as the following:
+```
+if __name__ == '__main__':
+    main()
+    # csv_testing()
+```
 
 
 
