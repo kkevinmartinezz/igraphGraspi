@@ -253,7 +253,7 @@ def run_all_three_functions(filename):
 
     total_mem = GC_mem + FG_mem + SP_mem
 
-    return GC_total_time, FG_total_time, SP_total_time, total_mem
+    return GC_total_time, FG_total_time, SP_total_time, total_mem, GC_mem + FG_mem + SP_mem
 
 def read_file_size_n(filename):
     with open(filename, 'r') as file:
@@ -314,7 +314,7 @@ def csv_testing2D():
         #            (data[3] + data2[3] + data3[3] + data4[3] + data5[3]) / 5]
         n_2 = n * n
         total_timeAVG = dataAVG[0] + dataAVG[1] + dataAVG[2]
-        row = f"{n:<5} {n_2:<8} {dataAVG[0]:<50,.50e} {dataAVG[1]:<50,.50e} {dataAVG[2]:<50,.50e} {total_timeAVG:<50,.50e} {dataAVG[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {dataAVG[0]:<50,.50e} {dataAVG[1]:<50,.50e} {dataAVG[2]:<50,.50e} {total_timeAVG:<50,.50e} {dataAVG[3]:<24}, {dataAVG[4]:<24}, {dataAVG[5]:<24}, {dataAVG[6]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[2]
@@ -324,7 +324,7 @@ def csv_testing2D():
         data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[2]
-        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}, {data[4]:<24}, {data[5]:<24}, {data[6]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[3]
@@ -334,7 +334,7 @@ def csv_testing2D():
         data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[2]
-        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}, {data[4]:<24}, {data[5]:<24}, {data[6]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[4]
@@ -344,7 +344,7 @@ def csv_testing2D():
         data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[2]
-        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}, {data[4]:<24}, {data[5]:<24}, {data[6]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[5]
@@ -354,7 +354,7 @@ def csv_testing2D():
         data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[2]
-        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}, {data[4]:<24}, {data[5]:<24}, {data[6]:<24}"
         writer.writerow([row])
 
 
@@ -378,7 +378,7 @@ def csv_testing3D():
                    (data[3] + data2[3] + data3[3] + data4[3] + data5[3]) / 5]
         n_3 = n * n * n
         total_timeAVG = dataAVG[0] + dataAVG[1] + dataAVG[2]
-        row = f"{n:<5} {n_3:<8} {dataAVG[0]:<50,.50e} {dataAVG[1]:<50,.50e} {dataAVG[2]:<50,.50e} {total_timeAVG:<50,.50e} {dataAVG[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {dataAVG[0]:<50,.50e} {dataAVG[1]:<50,.50e} {dataAVG[2]:<50,.50e} {total_timeAVG:<50,.50e} {dataAVG[3]:<24}, {dataAVG[4]:<24}, {dataAVG[5]:<24}, {dataAVG[6]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[2]
@@ -387,7 +387,7 @@ def csv_testing3D():
         data = run_all_three_functions(filename)
         n_3 = n * n * n
         total_time = data[0] + data[1] + data[2]
-        row = f"{n:<5} {n_3:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}, {data[4]:<24}, {data[5]:<24}, {data[6]:<24}"
         writer.writerow([row])
 
         filename = sys.argv[3]
@@ -396,7 +396,7 @@ def csv_testing3D():
         data = run_all_three_functions(filename )
         n_3 = n * n * n
         total_time = data[0] + data[1] + data[2]
-        row = f"{n:<5} {n_3:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
+        row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}, {data[4]:<24}, {data[5]:<24}, {data[6]:<24}"
         writer.writerow([row])
 
         # filename = sys.argv[4]
