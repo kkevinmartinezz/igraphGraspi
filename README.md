@@ -75,7 +75,7 @@ csv_testing()
 python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/2D-testFile/testFile-10-2D.txt igraphGraspi/tests/2D-testFile/testFile-50-2D.txt igraphGraspi/tests/2D-testFile/testFile-100-2D.txt igraphGraspi/tests/2D-testFile/testFile-500-2D.txt igraphGraspi/tests/2D-testFile/testFile-1000-2D.txt
 ```
 4. This will run tests for all of these testfiles and document the total memory and runtime usage of all of them in a file named Current_Test.csv.
-5. This will take a while to run but when it is done make sure data has been documented in the Current_Test.csv file.
+5. This will take a while to run but when it is done make sure data has been documented in the Current_Test.csv file, this file should be created into your project after executing the code in step 3.
 6. Don't forget to change code back when done, this is just for testing runtime and memory usage, to use the code as intended for one test file it should be as the following:
 ```
 if __name__ == '__main__':
