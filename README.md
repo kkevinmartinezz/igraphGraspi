@@ -41,6 +41,13 @@ git clone -b <Branch Name> --single-branch <paste line of code copied in step 5>
 ```
 9. This should import the entire repo. If not then you may need to activate GitHub addons into your IDE of choice.
 ## Testing from Command Line
+First locate the igraph_testing.py file and make sure the "if \_\_name__ = '\_\_main__':" at the bottom has only the main() function not commented out so it should look like the following:
+```
+if __name__ == '__main__':
+    main()
+    #csv_testing2D()
+    # csv_testing3D()
+```
 Now that we have cloned the REPO lets talk about testing.
 
 In this GitHub Repo, all the tests are in the test directory. Furthermore, within this directory are two more directories: 2D-testFile and 3D-testFile.
@@ -54,7 +61,6 @@ python igraphGraspi/igraphGraspi/igraph_testing.py {total pathname of test file}
 If you have the same test directories as this GitHub Repo you should be able to run the following command line argument to output a 2D 10x10 graph.
 ```
 python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/2D-testFile/testFile-10-2D.txt 2d
-
 ```
 ## Output of Command Line Input
 
@@ -68,9 +74,8 @@ if __name__ == '__main__':
     # main()
     csv_testing2D()
     # csv_testing3D()
-
 ```
-1. In the igraph_testing.py file's "__name__ == '__main__':" (shown above), comment out the main() function and uncomment csv_testing2D() so it now looks like the code above.
+1. In the igraph_testing.py file's "\_\_name\_\_ == '\_\_main\_\_':" (shown above), comment out the main() function and uncomment csv_testing2D() so it now looks like the code above.
 2. Now since we want to get the total runtimes and memory usage of 5 testcases you will need to add all 5 2-D testcases in the tests/2D-testFile directory as the inputs in this order: 10x10, 50x50, 100x100, 500x500, 1000x1000.
 3. Example command is as followed: 
 ```
