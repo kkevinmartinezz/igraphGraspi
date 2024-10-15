@@ -1,7 +1,7 @@
 import random
 
 def testFileMaker(num,depth,textFileName):
-    f = open(textFileName,"x")
+    f = open(textFileName,"w")
 
     with open(textFileName,'a') as f:
 
@@ -23,6 +23,5 @@ def testFileMaker(num,depth,textFileName):
     f.close()
 
     return "success"
-
         
-testFileMaker(1000,1,"2D-testFile/testFile-1000-2D.txt")
+testFileMaker(1000,1000,"tests/3D-testFile/testFile-1000-3D.txt")

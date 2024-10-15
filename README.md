@@ -62,13 +62,15 @@ If the pathname is correct and it is properly stated whether it is a 2d or 3d gr
 if you exit out of this pop-up window, then another will appear with the visualization of the filtered version of the same graph. 
 If this doesn't occur then you either did not follow the pathname of the test-file correctly or did not state that the graph is either 2d or 3d. 
  
-# Outputting Runtime and Memory data into CSV file
+## Outputting Runtime and Memory data into CSV file (for 2D tests)
 ```
 if __name__ == '__main__':
     # main()
-csv_testing()
+    csv_testing2D()
+    # csv_testing3D()
+
 ```
-1. In the igraph_testing.py file's "__name__ == '__main__':" (shown above), comment out the main() function and uncomment csv_testing() so it now looks like the code above.
+1. In the igraph_testing.py file's "__name__ == '__main__':" (shown above), comment out the main() function and uncomment csv_testing2D() so it now looks like the code above.
 2. Now since we want to get the total runtimes and memory usage of 5 testcases you will need to add all 5 2-D testcases in the tests/2D-testFile directory as the inputs in this order: 10x10, 50x50, 100x100, 500x500, 1000x1000.
 3. Example command is as followed: 
 ```
@@ -80,8 +82,28 @@ python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/2D-testFil
 ```
 if __name__ == '__main__':
     main()
-    # csv_testing()
+    # csv_testing2D()
+    # csv_testing3D()
 ```
+
+## Outputting Runtime and Memory data into CSV file (for 3D tests)
+
+Same as 2D tests but now uncomment only the csv_testing3D() function.
+Should look like code below:
+```
+if __name__ == '__main__':
+    # main()
+    # csv_testing2D()
+    csv_testing3D()
+```
+
+Code to run and output data for 3D tests into a file named Current_Test3D.csv:
+```
+python igraphGraspi/igraphGraspi/igraph_testing.py igraphGraspi/tests/3D-testFile/testFile-10-3D.txt igraphGraspi/tests/3D-testFile/testFile-50-3D.txt igraphGraspi/tests/3D-testFile/testFile-100-3D.txt 
+```
+
+**DISCLAIMER: current machines that this code has been tested on can not run 500x500x500 or higher graphs. Hence why we only test up to 100x100x100.
+
 
 
 
