@@ -294,6 +294,7 @@ def main():
 def csv_testing2D():
 
     with open('igraphGraspi/Current_Test.csv', 'w', newline='') as file:
+        total_time = 0
         filename = sys.argv[1]
         field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
                  " Memory Usage"]
@@ -302,15 +303,15 @@ def csv_testing2D():
         writer.writerow([f])
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename)
-        data2 = run_all_three_functions(filename)
-        data3= run_all_three_functions(filename)
-        data4 = run_all_three_functions(filename)
-        data5 = run_all_three_functions(filename)
-        dataAVG = [(data[0] + data2[0] + data3[0] + data4[0] + data5[0]) / 5,
-                   (data[1] + data2[1] + data3[1] + data4[1] + data5[1]) / 5,
-                   (data[2] + data2[2] + data3[2] + data4[2] + data5[2]) / 5,
-                   (data[3] + data2[3] + data3[3] + data4[3] + data5[3]) / 5]
+        dataAVG = run_all_three_functions(filename)
+        # data2 = run_all_three_functions(filename)
+        # data3= run_all_three_functions(filename)
+        # data4 = run_all_three_functions(filename)
+        # data5 = run_all_three_functions(filename)
+        # dataAVG = [(data[0] + data2[0] + data3[0] + data4[0] + data5[0]) / 5,
+        #            (data[1] + data2[1] + data3[1] + data4[1] + data5[1]) / 5,
+        #            (data[2] + data2[2] + data3[2] + data4[2] + data5[2]) / 5,
+        #            (data[3] + data2[3] + data3[3] + data4[3] + data5[3]) / 5]
         n_2 = n * n
         total_timeAVG = dataAVG[0] + dataAVG[1] + dataAVG[2]
         row = f"{n:<5} {n_2:<8} {dataAVG[0]:<50,.50e} {dataAVG[1]:<50,.50e} {dataAVG[2]:<50,.50e} {total_timeAVG:<50,.50e} {dataAVG[3]:<24}"
@@ -330,7 +331,7 @@ def csv_testing2D():
         writer = csv.writer(file)
         n = read_file_size_n(filename)
         dimensions = 2
-        data = run_all_three_functions(filename )
+        data = run_all_three_functions(filename)
         n_2 = n * n
         total_time = data[0] + data[1] + data[2]
         row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
@@ -355,6 +356,7 @@ def csv_testing2D():
         total_time = data[0] + data[1] + data[2]
         row = f"{n:<5} {n_2:<8} {data[0]:<50,.50e} {data[1]:<50,.50e} {data[2]:<50,.50e} {total_time:<50,.50e} {data[3]:<24}"
         writer.writerow([row])
+
 
 def csv_testing3D():
     with open('igraphGraspi/Current_Test3D.csv', 'w', newline='') as file:
@@ -416,6 +418,6 @@ def csv_testing3D():
         # writer.writerow([row])
 
 if __name__ == '__main__':
-    # main()
+    main()
     # csv_testing2D()
-    csv_testing3D()
+    # csv_testing3D()
