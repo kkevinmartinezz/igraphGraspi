@@ -297,9 +297,9 @@ def csv_testing2D():
         total_time = 0
         filename = sys.argv[1]
         field = ["n", " n2", " Graph creation", " Connected Components", " Shortest Path", " total",
-                 " Memory Usage"]
+                 " Total Memory Usage", "Graph Creation Mem Usage", "Filtering Mem Usage ", "Shortest Path MEM Usage"]
         writer = csv.writer(file)
-        f = "{:<5} {:<8} {:<55} {:<56} {:<56} {:<56} {:<30}".format(*field)
+        f = "{:<5} {:<8} {:<55} {:<56} {:<56} {:<56} {:<30} {:<30} {:<30} {:<30}".format(*field)
         writer.writerow([f])
         n = read_file_size_n(filename)
         dimensions = 2
