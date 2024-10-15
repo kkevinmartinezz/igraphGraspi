@@ -12,9 +12,10 @@ The basic algorithm requirements include:
 
 ## Installation
 Downloads needed can be found in requirements.txt
+
+To install this package run the following command:
 ```
-pip install igraph 
-pip install matplotlib
+pip install graspi-igraph
 ```
   If there are any issues with installation, please visit: https://python.igraph.org/en/stable/
 
